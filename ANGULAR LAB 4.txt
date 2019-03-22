@@ -7,8 +7,34 @@ Backend -> TP prog 3. Interacción entre backend y frontend
 
 1er TP > Sala de Juegos. Analizar y entender como funciona
 
-PARA INSTALAR ANGULAR -> INSTALAR NODE Y DESPUES INSTALAR ANGULAR
+PARA INSTALAR ANGULAR -> INSTALAR NODE Y DESPUES INSTALAR ANGULAR --- Instalar bootstrap
 
 1er Parcial > Uso y modificación de plugins
 
 Firebase > DB para angular
+
+DEEZ LOADER remix
+
+Proyecto Angular: src -> app 
+
+En appmodule hacemos las interacciones
+
+
+ng generate component
+ng g c componentes/login
+
+app.component.html
+login.component.ts -> selector (tag HTML)
+
+
+CORRECCIONES DE TP ONLINE - NADA LOCAL
+VERIFICAR LAS VERSIONES DE ANGULAR Y NODE, ETC PARA QUE FUNCIONE
+
+BINDING Usuario - Interfaz
+
+<[(ngModel)] = "usuario.name"> EL OBJETO TIENE Q ESTAR INSTANCIADO 
+ 
+
+1er parte TP -> Cambiar interfaz y experiencia de usuario (UX) totalmente (se puede copiar template HTML). No usar nada de jQuery
+Estilos, cambiar imágenes, animaciones, diseño de botones, poca cant. clicks para lograr funcionalidad
+
