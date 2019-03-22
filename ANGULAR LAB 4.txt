@@ -1,0 +1,14 @@
+angular.io -> HACER TUTORIAL HEROES - Aprender eso y funcionamiento del frontend respecto al backend
+
+Manipular framework de Angular
+Código escrito en Typescript
+
+Backend -> TP prog 3. Interacción entre backend y frontend
+
+1er TP > Sala de Juegos. Analizar y entender como funciona
+
+PARA INSTALAR ANGULAR -> INSTALAR NODE Y DESPUES INSTALAR ANGULAR
+
+1er Parcial > Uso y modificación de plugins
+
+Firebase > DB para angular
