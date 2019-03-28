@@ -38,3 +38,5 @@ BINDING Usuario - Interfaz
 1er parte TP -> Cambiar interfaz y experiencia de usuario (UX) totalmente (se puede copiar template HTML). No usar nada de jQuery
 Estilos, cambiar imágenes, animaciones, diseño de botones, poca cant. clicks para lograr funcionalidad
 
+https://angular.io/tutorial
+

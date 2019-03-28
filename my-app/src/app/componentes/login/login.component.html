@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
+					<!-- <form> -->
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -29,7 +29,7 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input type="password" name="" class="form-control input_pass" value="" placeholder="password" [(ngModel)]="usuario.pass">
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -37,10 +37,10 @@
 								<label class="custom-control-label" for="customControlInline">Remember me</label>
 							</div>
 						</div>
-					</form>
+					<!-- </form> -->
 				</div>
 				<div class="d-flex justify-content-center mt-3 login_container">
-					<button type="button" name="button" class="btn login_btn">Login</button>
+					<button (click)="guardar()" type="button" name="button" class="btn login_btn">Login</button>
 				</div>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
@@ -53,5 +53,11 @@
 			</div>
 		</div>
 	</div>
+
+	<div *ngIf="guardado" class="resultados">
+	<h1>Resultados</h1>
+	<span>Name: {{usuario.name}}</span>
+	<span>Password: {{usuario.pass}}</span>
+</div>
 </body>
 </html>
