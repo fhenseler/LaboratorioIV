@@ -1,0 +1,41 @@
+App.Module
+
+import {RouterModule} from '@angular/router';
+
+
+RouterModule.forRoot([ ]);
+
+{Path: "", LoginComponent}
+
+
+
+SACAR EL TAG DE LOGIN Y PONER
+
+<router-outlet> </>
+
+
+<button routerLink = "/Error">
+
+
+
+@input
+</app dato = "Hola"> </>
+
+3 componentes: ALTA, MUESTRA y CONTAINER
+Parece que es todo una vista, pero trabajo con componentes distintos
+
+
+ALTA: Crea objeto. 
+CONTAINER: Toma el objeto, lo guarda en un array y se lo pasa a MUESTRA.
+MUESTRA: Muestra el objeto.
+
+Objeto -> Array
+
+ALTA -> CONTAINER -> MUESTRA
+
+Hacer que el dato de input sea de tipo Alumno en vez de string
+
+
+CAMBIAR MENÚ E IMÁGENES DEL TP para 4/4!!
+
+GITHUB OCTAVIO -> EJEMPLO INPUT/OUTPUT
