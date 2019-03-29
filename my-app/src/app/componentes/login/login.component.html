@@ -40,7 +40,10 @@
 					<!-- </form> -->
 				</div>
 				<div class="d-flex justify-content-center mt-3 login_container">
-					<button (click)="guardar()" type="button" name="button" class="btn login_btn">Login</button>
+          <button (click)="guardar()" type="button" name="button" class="btn login_btn">Login</button>
+          <button routerLink = '/Error' type="button" name="button" class="btn error_btn">Error</button>
+          <app-componente-con-input dato = Usuario></app-componente-con-input>
+          <button (click)="navegar()" type="button" name="button" class="btn nav_btn">Navegar</button>
 				</div>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
@@ -57,7 +60,7 @@
 	<div *ngIf="guardado" class="resultados">
 	<h1>Resultados</h1>
 	<span>Name: {{usuario.name}}</span>
-	<span>Password: {{usuario.pass}}</span>
+  <span>Password: {{usuario.pass}}</span>
 </div>
 </body>
 </html>
