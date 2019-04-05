@@ -6,6 +6,9 @@ Código escrito en Typescript
 Backend -> TP prog 3. Interacción entre backend y frontend
 
 1er TP > Sala de Juegos. Analizar y entender como funciona
+TP OBLIGATORIO PARA LA PROMOCION DIRECTA
+
+
 
 PARA INSTALAR ANGULAR -> INSTALAR NODE Y DESPUES INSTALAR ANGULAR --- Instalar bootstrap
 
