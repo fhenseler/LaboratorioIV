@@ -46,7 +46,8 @@
 					<!--app-listado-alumnos [listadoAlumnos]="listadoPrincipal"    (alumnoSeleccionado)="tomarAlumnoParaDetalles($event)"></app-listado-alumnos-->
 					<!--app-listado-profesor [listadoProfesores]="ListadoProfesoresPrincipal"  (profesorSeleccionado)="tomarProfesorParaDetalles($event)"></app-listado-profesor-->
 
-					<app-tabla-profesor [listadoProfesores]="ListadoProfesoresPrincipal" ></app-tabla-profesor>		
+					<app-tabla-profesor [listadoProfesores]="ListadoProfesoresPrincipal"
+					 (profesorSeleccionado)="tomarProfesorParaDetalles($event)" ></app-tabla-profesor>		
 			</div>		
 
 		</article>

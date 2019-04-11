@@ -7,9 +7,14 @@ import { Profesor } from 'src/app/clases/profesor';
 })
 export class TablaProfesorComponent implements OnInit {
 @Input()  listadoProfesores:Profesor[];
+@Output() profesorSeleccionado: EventEmitter<any>= new EventEmitter<any>(); 
   constructor() { }
 
   ngOnInit() {
   }
-
+ mostrarDetalles(parametroProfesor)
+  {
+  	console.log("tabla");
+    this.profesorSeleccionado.emit(parametroProfesor);
+  }
 }
