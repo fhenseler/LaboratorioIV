@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 20pt;
+    font-weight: normal;
+    background: lightblue; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(
+      -90deg,
+      lightblue,
+      black
+    ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(
+      -90deg,
+      lightblue,
+      black
+    ); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(
+      -90deg,
+      lightblue,
+      black
+    ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-90deg, lightblue, black); /* Standard syntax */
+  }
+  
+  .main {
+    margin: 100px auto;
+    text-align: center;
+  }
+  
+  button {
+    padding: 20px;
+    background: transparent;
+    text-shadow: 1px 1px 1px #202020;
+    font-family: "Lato", sans-serif;
+    font-size: 18pt;
+    border: 1px solid lightblue;
+    color: lightblue;
+  }
+
+  #time{
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+  }
+  
+
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+   
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+#snackbar.Ganador {
+    background-color: #059F2F;
+}
+#snackbar.Perdedor {
+    background-color: #FF0000;
+}
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

@@ -9,7 +9,7 @@
 <h2></h2>
 <form name="juego">
 
-   <label>ingrese numero:  </label>  <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
+   <label>Ingrese número:  </label>  <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
     <h1>{{nuevoJuego.numeroIngresado}}  </h1>
  
     <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
@@ -18,8 +18,8 @@
  
     <h2><p *ngIf="nuevoJuego.numeroSecreto!=0" ><i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p></h2>
 
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
+    <h3 [hidden]="!nuevoJuego.gano">Usted adivinó el número</h3>
+    <h3 [hidden]="nuevoJuego.gano">Usted aún no ganó </h3>
 
 
 </form>
