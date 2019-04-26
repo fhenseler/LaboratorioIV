@@ -1,0 +1,23 @@
+- TRAER API REST HECHA Y FUNCIONANDO. ALTA, BAJA, MODIFICAR.
+- Tener los HTTP funcionando (ya están hechos - sala de juegos)
+
+CREAR ESTRUCTURA DE TABLA, SUBIR TODO Y DESPUÉS LOGRAR BAJARLO.
+Referenciar foto con producto. Hardcodear datos.
+
+PARCIAL
+Pasar datos de un servicio a otro. Entender el asincronismo de llamado de servicio a servicio.
+Las peticiones HTTP no pueden estar en los componentes. El encargado de guardar es el servicio.
+Adaptar lo hecho en PROG 3 al parcial.
+
+Se puede usar la API REST que tenemos hecha en PHP.
+
+CREAR TABLA HARDCODEADA
+SELECT * FROM PRODUCTOS (API)
+
+servicio helados que nos permita traerlos desde la DB
+
+PARA UN 4 -> PUNTO 1 + INPUT + OUTPUT
+
+TP EVALUA INTERFAZ VISUAL, PARCIAL EVALUA LOGICA
+
+
