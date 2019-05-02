@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaComponent } from '../componentes/lista/lista.component';
 import { OtroComponenteComponent } from '../componentes/otro-componente/otro-componente.component';
-import { PrincipalComponent } from '../componentes/principal/principal.component'
+import { PrincipalComponent } from '../componentes/principal/principal.component';
 import { AppComponent } from '../app.component';
 // declaro donde quiero que se dirija
 const MiRuteo = [
   {
-    path: '', 
+    path: '',
     component: PrincipalComponent,
     children:
     [
@@ -18,7 +18,7 @@ const MiRuteo = [
         { path: 'Otro', data: { depth: 2 }, component: OtroComponenteComponent }
     ]
   }
-]
+];
 
 @NgModule({
   imports: [

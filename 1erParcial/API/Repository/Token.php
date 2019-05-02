@@ -7,10 +7,10 @@ class Token{
 
     private static $key = "example_key";
 
+    //id token's payload
     private static $token = array(
-        "iss" => "https://securetoken.google.com/mauricioCerizza", //Emisor
-        "aud" => "mauricioCerizza", //Público
-        "iat" => "", //Cuándo fue metido
+        "iss" => "https://securetoken.google.com/fhenseler", //Emisor
+        "aud" => "Federico Henseler", //Cuándo fue metido
         "nbf" => "", //Antes de esto no va a funcionar (Desde)
         //"exp" => "", //Hasta cuando va a funcionar
         "usuario" => "",
