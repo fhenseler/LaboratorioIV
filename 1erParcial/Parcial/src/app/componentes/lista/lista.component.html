@@ -1,0 +1,33 @@
+<app-navbar (agregadoNuevo)="RefreshData()" (resultadoBuscar)="FiltrarPorModelo($event)"></app-navbar>
+
+<div class="container-fluid">
+  <div class="row card-group">
+      <div appColor [color]="'red'" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let objeto of objetos">
+        <div class="card">
+          <img class="card-img-top img-fluid" [src]="'http://localhost:8080/API/' + objeto.rutaFoto" alt="Vehiculo">
+          <div class="card-body">
+            <h5 class="card-title">{{objeto.modelo}}</h5>
+            <p class="card-text"><b>Marca:</b> {{objeto.marca}}</p>
+            <p class="card-text"><b>Cantidad de Puertas:</b> {{objeto.cantidadPuertas}}</p>
+            <app-boton [id] = "objeto.id" (borrado)="RefreshData()"></app-boton>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"><fa name="times"></fa> Error</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>No se encontraron coincidencias con lo buscado.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Aceptar</button>
+    </div>
+  </ng-template>
+  
