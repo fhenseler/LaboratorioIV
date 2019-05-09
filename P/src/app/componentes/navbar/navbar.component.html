@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="AgregarClicked(content)">Agregar Helado</button>
+      </li>
+    </ul>
+    <div>
+      <app-search (resultadoBuscar)="BuscarClicked($event)"></app-search>
+    </div>
+  </div>
+</nav>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Agregar</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="sabor">Sabor: </label>
+          <input type="text" id="sabor" formControlName = "sabor" class="form-control" [ngClass]="{ 'is-invalid': form.controls['sabor'].touched && form.controls['sabor'].invalid }">
+          <!-- <div *ngIf="form.controls['sabor'].touched && form.controls['sabor'].invalid" class="invalid-feedback">
+              <div *ngIf="form.controls['sabor'].errors.required">Debe ingresar el sabor.</div>
+          </div> -->
+        </div>        
+        <div class="form-group">
+          <label for="tipo">Tipo: </label>
+          <select id="tipo" class="form-control" formControlName = "tipo">
+            <option value="Agua">Agua</option>
+            <option value="Crema">Crema</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="kilos">Kilos: </label>
+          <input type="text" id="kilos" class="form-control" formControlName = "kilos" [ngClass]="{ 'is-invalid': form.controls['kilos'].touched && form.controls['kilos'].invalid }">
+          <!-- <div *ngIf="form.controls['kilos'].touched && form.controls['kilos'].invalid" class="invalid-feedback">
+              <div *ngIf="form.controls['kilos'].errors.required">Debe ingresar la cantidad de kilos.</div>
+          </div> -->
+        </div>
+      </form>
+      <div *ngIf="error" class="alert alert-danger" role="alert"><fa name="times"></fa> {{errorMessage}} </div>
+    </div>
+    <div class="modal-footer">
+      <button [disabled]="form.controls['kilos'].invalid || form.controls['sabor'].invalid" type="submit" class="btn btn-primary" (click)="Submit()">Agregar</button>
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Cancelar</button>
+    </div>
+  </ng-template>

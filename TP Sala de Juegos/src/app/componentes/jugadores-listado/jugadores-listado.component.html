@@ -1,29 +1,105 @@
-<ul class="nav nav-pills nav-justified">
+<!-- <ul class="nav nav-pills nav-justified">
   <li class="active"><a routerLink="/Principal">Ir a inicio</a></li>
   <li><a (click)="TraerTodos()">Todos los jugadores</a></li>
   <li><a (click)="TraerGanadores()">Los ganadores</a></li>
   <li><a (click)="TraerPerdedores()">Los perdedores</a></li>
-</ul>
+</ul> -->
+
+
+<div style="padding-top: 10px;padding-bottom:10px;background-color:black;color: whitesmoke;border-radius:2px; margin-top: 5% ">
+  <div style="text-align: center">
+      Elegir Juego: <select style="border-radius: 8px;background-color:black;color:white;" [(ngModel)]="filtroJuego">
+              <option value="aen">Adivina el número</option>
+              <option value="aa">Agilidad aritmética</option>
+              <option value="rv">Clickea rápido</option>
+              <option value="ppt">Piedra papel o tijera</option>
+              <option value="ttt">Ta-te-ti</option>
+              <option value="ag">Anagrama</option>
+            </select>
+  </div>
+</div>
 
 
 
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Usuario</th>
-      <th>CUIT</th>
-      <th>Sexo</th>
-      <th>Ganó</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let jugador of listado" >
-      <td>{{jugador.usuario}} </td>
-      <td>{{jugador.cuit}} </td> 
-      <td>{{jugador.sexo | sexo| uppercase}} </td> 
-      <td>{{jugador.gano}} </td> 
-      
-    </tr>
-   
-  </tbody>
-</table>
+<div style="background-color:white;">
+<div *ngIf="filtroJuego == 'aen'">
+    <table class="table table-striped">
+        <thead>
+          <th>Usuario</th>
+          <th>Resultado</th>
+          <th>Cantidad de intentos</th>
+        </thead>
+        <tbody *ngFor="let item of resultadosAdivina">
+          <td>{{item.usuario}}</td>
+          <td>{{item.resultado}}</td>
+          <td>{{item.intentos}}</td>
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="filtroJuego == 'aa'">
+    <table class="table table-striped">
+        <thead>
+          <th>Usuario</th>
+          <th>Cantidad de aciertos</th>                
+        </thead>
+        <tbody *ngFor="let item of resultadosAgilidad">
+          <td>{{item.usuario}}</td>
+          <td>{{item.cantAciertos}} / 5</td>               
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="filtroJuego == 'ag'">
+    <table class="table table-striped">
+        <thead>
+          <th>Usuario</th>
+          <th>Resultado</th>               
+          <th>Palabra que adivinó</th>
+        </thead>
+        <tbody *ngFor="let item of resultadosAnagrama">
+          <td>{{item.usuario}}</td>
+          <td>{{item.resultado}}</td>               
+          <td>{{item.palabraOrdenada}}</td>
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="filtroJuego == 'ppt'">
+    <table class="table table-striped">
+        <thead>
+          <th>Usuario</th>                
+          <th>Resultado</th>
+        </thead>
+        <tbody *ngFor="let item of resultadosPPT">
+          <td>{{item.usuario}}</td>               
+          <td>{{item.resultado}}</td>
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="filtroJuego == 'rv'">
+    <table class="table table-striped">
+        <thead>
+          <th>Usuario</th>
+          <th>Resultado</th>
+        </thead>
+        <tbody *ngFor="let item of resultadosClickea">
+          <td>{{item.usuario}}</td>
+          <td>{{item.resultado}}</td>
+        </tbody>
+      </table>
+</div>
+<div *ngIf="filtroJuego == 'ttt'">
+    <table class="table table-striped">
+        <thead>
+          <th>Usuario</th>
+          <th>Resultado</th>
+        </thead>
+        <tbody *ngFor="let item of resultadosTateti">
+          <td>{{item.usuario}}</td>
+          <td>{{item.resultado}}</td>
+        </tbody>
+      </table>
+</div>
+</div>

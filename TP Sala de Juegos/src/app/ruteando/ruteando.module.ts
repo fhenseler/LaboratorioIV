@@ -22,6 +22,16 @@ import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
 import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/listado-de-paises.component'
 import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
+import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+import { TatetiComponent } from '../componentes/tateti/tateti.component';
+
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 
 // declaro donde quiero que se dirija
@@ -35,7 +45,6 @@ const MiRuteo = [
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
 {path: 'Paises' , component: ListadoDePaisesComponent},
-{path: 'Clickea' , component: ClickeaRapidoComponent},
 
 { path: 'Juegos' ,
 component: JuegosComponent ,
@@ -45,17 +54,30 @@ children:
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
       {path: 'AgilidadMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-      {path: 'Clickea' , component: ClickeaRapidoComponent}]
+      {path: 'PPT' , component: PiedraPapelTijeraComponent},
+      {path: 'Clickea' , component: ClickeaRapidoComponent},
+      {path: 'Anagrama' , component: AnagramaComponent},
+      {path: 'Tateti' , component: TatetiComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(MiRuteo)
+    RouterModule.forRoot(MiRuteo),
+    DialogModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ]
 })
 export class RuteandoModule { }

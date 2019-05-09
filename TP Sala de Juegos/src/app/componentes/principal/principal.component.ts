@@ -33,9 +33,19 @@ export class PrincipalComponent implements OnInit {
         break;
       case 'AgilidadMasListado':
           this.router.navigate(['/Juegos/AgilidadMasListado']);
+          break;
       case 'Clickea':
-      this.router.navigate(['/Juegos/Clickea']);
-        break;
+          this.router.navigate(['/Juegos/Clickea']);
+          break;
+      case 'PPT':
+          this.router.navigate(['/Juegos/PPT']);
+      break;
+      case 'Anagrama':
+      this.router.navigate(['/Juegos/Anagrama']);
+    break;
+    case 'Tateti':
+    this.router.navigate(['/Juegos/Tateti']);
+  break;
     }
   }
 

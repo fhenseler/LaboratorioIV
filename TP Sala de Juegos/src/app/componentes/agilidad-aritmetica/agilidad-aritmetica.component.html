@@ -1,38 +1,61 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!--app-menu></app-menu-->
-<!-- index.html -->
+<app-cabecera> </app-cabecera>
+<mat-toolbar color="accent">
+        <mat-toolbar-row>
+            <span>Jugador : {{nombreJugador}}</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+<div class="container animated fadeInLeft" style="text-align: center;background-color: black;margin-top: 5%">
+   
+        <br>
+    <form name="juego">
+        <h4>Cantidad de aciertos: {{nuevoJuego.cantAciertos}} / {{nuevoJuego.cantCuentas}}</h4>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h5>Primer número:</h5> <input [(ngModel)]="nuevoJuego.numeroUno" placeholder="Número uno" name="numero1" type="text" class="form-control" readonly/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h5>Operador:</h5> <input [(ngModel)]="nuevoJuego.cuenta" placeholder="Operador" name="operador" type="text" class="form-control" readonly/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h5>Segundo número:</h5> <input [(ngModel)]="nuevoJuego.numeroDos" placeholder="Número dos" name="numero2" type="text" class="form-control" readonly/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h5>Respuesta:</h5> <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="Ingrese el resultado" id="resultadoDeCuenta" name="numeroIngresado" type="text" class="form-control"/>
+            </div>
+        </div>
+        <br>
+        <h5 [hidden]="ocultarVerificar">
+            <p><i class="fa fa-spinner fa-spin"></i> Esperando numero...</p>
+           
+        </h5>
+        <br>  
+                <h5 [hidden]="ocultarVerificar"><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h5>
+              
+                <h5 [hidden]="!ocultarVerificar"><button mat-raised-button style="background-color:green; color:white;" (click)="NuevoJuego()" class="btn">Comenzar juego</button></h5>   
+                <br>         
+    
+    
+    </form>
+    </div>
 
 
-<form name="juego">
-<ul>
-   <!-- <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
+    <!-- <p-dialog header="Fin del juego" [(visible)]="display" [width]="300">
+            <div class="alert alert-info" style="font-size: 150%; text-align: center">
+                   <strong>Termino el juego</strong><br>Cantidad de aciertos: {{nuevoJuego.cantAciertos}} / {{nuevoJuego.cantCuentas}}
+                  </div>
+    </p-dialog> -->
+   
+    <p-dialog header="Fin del juego" [(visible)]="display" [width]="300">
+            <div class="alert alert-info" style="font-size: 150%; text-align: center">
+                   <strong>Termino el juego</strong><br>Cantidad de aciertos: {{nuevoJuego.cantAciertos}} / {{nuevoJuego.cantCuentas}}
+                  </div>
+    </p-dialog>
 
-  </li>
-  <li>
-   Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-
-  </li>
-  <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-
-  </li>
-  <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/> -->
-
-   <!-- </li> -->
-  <li>
-    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
-  </li>
-  <li>
-    <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
-  </li>
-  <li>
-    <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando número...</p></h2>
-
-    <!-- <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3> -->
-    <!-- <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3> -->
-  </li>
-</ul>
-
-</form>
+  
+    

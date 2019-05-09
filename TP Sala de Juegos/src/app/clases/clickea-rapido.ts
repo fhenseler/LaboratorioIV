@@ -15,7 +15,7 @@ export class JuegoClickea extends  Juego {
 
 
 public startTimer() {
-    if(this.timerStarted == false)
+    if(this.timerStarted == false && this.contador == 0)
     {
         let intervalId = setInterval(() => {
             if(this.timeLeft > 0)

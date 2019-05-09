@@ -36,8 +36,7 @@
     box-shadow: 0 4px 8px 0 rgba(126, 126, 126, 0.2);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
-    max-width: 225px;
-   height: 100%;
+    max-width: 160px;
     margin: 10px;
     padding-bottom: 10px;
     float: left;

@@ -1,0 +1,40 @@
+<app-navbar (agregadoNuevo)="RefreshData()" (resultadoBuscar)="FiltrarPorSabor($event)"></app-navbar>
+
+<div class="container-fluid">
+            <div class="col-md-12">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th>Sabor</th>
+                            <th>Tipo</th>
+                            <th>Kilos</th>
+                            <!-- <th>Foto</th> -->
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let objeto of objetos">
+                        <td>{{objeto.sabor}}</td>
+                        <td>{{objeto.tipo}}</td>
+                        <td>{{objeto.kilos}}</td>
+                        <!-- <td><img class="card-img-top img-fluid" [src]="'http://localhost:8080/API/' + objeto.rutaFoto" alt="FotoHelado"></td> -->
+                        <td><app-button [id] = "objeto.id" (borrado)="RefreshData()"></app-button></td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">ERROR</h4>
+    </div>
+    <div class="modal-body">
+      <p>El helado que buscás no existe o no hay stock</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Save click')">Aceptar</button>
+    </div>
+  </ng-template>
+  

@@ -1,45 +1,48 @@
-<body>
-  <div class="jumbotron">
-    <h2 id="terminos">Terminos y condiciones</h2>
-    <p>La única regla es que NO HAY REGLAS :D.</p>
+<div  style="  width: 100%; height: 100%;">
    
+  <div style="background: whitesmoke;">
+    <div class="ui-g-12"  style="font-size: 150%;text-align: center">
+    
+          <div class="ui-g-12 ui-md-12">
+      
+                                  
+
+                    
+                        <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
+                        <input type="email" name="email"  style="width: 90%;" pInputText placeholder="Correo electronico" [(ngModel)]="email">  
+                      </div>            
+                    
+                    <div class="ui-g-12 ui-md-12" style="text-align: center">
+                        
+                      <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                      <input type="password" name="pass"  style="width: 90%;" placeholder="Contraseña"    [(ngModel)]="pass"/> 
+                    </div>    
+
+                    <div class="ui-g-12 ui-md-12" style="text-align: center">
+                        
+                      <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                      <input type="password" name="pass2"  style="width: 90%;" placeholder="Repita la contraseña"    [(ngModel)]="pass2"/> 
+                    </div>        
+                 
+                        
+          </div>
+  <div class="container ui-g-12" style="text-align: center; font-size: 79%">
+          <button mat-raised-button color="primary" (click)="Registrar()">Registrarse</button>
   </div>
-  <strong><p>No leer lo anterior, es solo un ejemplo sacado de https://www.argentina.gob.ar/terminos-y-condiciones </p></strong>
-  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Acepto</button>
-  <button  class="cancelbtn"  routerLink="/Principal" style="width:auto;">No acepto</button>
-  <div id="id01" class="modal">
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-    <form class="modal-content animate" >
-      <div class="container">
-        <label><b>Email</b></label>
-        <input type="text" placeholder="Ingresa tu correo" name="email" required>
-  
-        <label><b>Clave</b></label>
-        <input type="password" placeholder="Aca la clave" name="psw" required>
-  
-        <label><b>Repita la clave</b></label>
-        <input type="password" placeholder="Aca repeti la misa clave  de arriba" name="psw-repeat" required>
-        <input type="checkbox" checked="checked">Recordar mis datos
-        <p>creando la cuenta aceptando los<a  onclick="document.getElementById('id01').style.display='none'"  >Terminos y condiciones</a>.</p>
-  
-        <div class="clearfix">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Me arrepenti</button>
-          <button type="submit" class="signupbtn">Registrarme</button>
-        </div>
-      </div>
-    </form>
+             
+              
+         
+    
+  </div>
+
+
+
+      
+     
   </div>
   
-  <script>
-  // Get the modal
-  var modal = document.getElementById('id01');
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
-  </script>
-  
-  </body>
+
+
+<p-dialog header="Error" [(visible)]="display">
+  {{errorMsg}}
+</p-dialog>

@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -7,6 +9,7 @@ import { ListadoDeResultadosComponent } from './componentes/listado-de-resultado
 import { LoginComponent } from './componentes/login/login.component';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
+import {MatButtonModule, MatCheckboxModule, MatCardModule, MatProgressSpinnerModule, MatToolbarModule} from '@angular/material';
 
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
@@ -16,7 +19,7 @@ import { MiHttpService } from './servicios/mi-http/mi-http.service';
 import { PaisesService } from './servicios/paises.service'; 
 
 import { JugadoresService } from './servicios/jugadores.service'; 
-import{ ArchivosJugadoresService} from './servicios/archivos-jugadores.service'; 
+import {ArchivosJugadoresService} from './servicios/archivos-jugadores.service'; 
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
@@ -54,6 +57,21 @@ import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
 import { ClickeaRapidoComponent } from './componentes/clickea-rapido/clickea-rapido.component';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { TatetiComponent } from './componentes/tateti/tateti.component';
+import { MatGridListModule } from '@angular/material'
+import { FirebaseService } from './servicios/firebase.service';
+import { AngularFireDatabase } from 'angularfire2/database';
+
+var config = {
+  apiKey: "AIzaSyBhBu4s5RrHuL6CWxlmSoB-UY72eywP4fM",
+  authDomain: "tp-sala-de-juegos-47211.firebaseapp.com",
+  databaseURL: "https://tp-sala-de-juegos-47211.firebaseio.com",
+  projectId: "tp-sala-de-juegos-47211",
+  storageBucket: "tp-sala-de-juegos-47211.appspot.com",
+  messagingSenderId: "245518479305"
+};
+
 
 @NgModule({
   declarations: [
@@ -80,22 +98,27 @@ import { ClickeaRapidoComponent } from './componentes/clickea-rapido/clickea-rap
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    ClickeaRapidoComponent
+    ClickeaRapidoComponent,
+    PiedraPapelTijeraComponent,
+    TatetiComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RuteandoModule,
     HttpModule,
+    MatButtonModule, MatCheckboxModule, MatCardModule, MatProgressSpinnerModule, MatToolbarModule, MatGridListModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(config), 
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
-    })
+      apiKey: 'AIzaSyBhBu4s5RrHuL6CWxlmSoB-UY72eywP4fM'})
+    ],
     
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
-  ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+ 
+  providers: [AngularFireDatabase, FirebaseService, JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
