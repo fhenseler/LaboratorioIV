@@ -1,0 +1,58 @@
+<app-cabecera> </app-cabecera>
+<mat-toolbar color="accent">
+    <mat-toolbar-row>
+        <span>Jugador : {{nombreJugador}}</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+    <div class="container animated fadeInUp" style="text-align:center ;background-color: black; margin-top: 5%">
+     
+
+            <div style="border: 10px solid #f1f1f1;
+            padding: 10px;
+            background:black;">
+                <br>
+                <br>
+                <div [hidden]="!mostrar">
+                    <h5 style="color: gold;">Pulsa el botón para jugar</h5>
+
+                </div>
+                <div [hidden]="mostrar">
+
+               
+                <h5 style="color: gold;">Tiempo: {{Tiempo}}</h5>
+                <h5 style="color: gold;">Palabra desordenada (pista: países): {{palabraDesordenada}}</h5>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <input class="form-control" type="text" id="palabraIngresada" [(ngModel)]="palabraIngresada">
+                    </div>
+                </div>
+                <h2></h2>
+                <button class="btn btn-primary" mat-raised-button color="warn" id="botonGenerar" (click)="generarPalabra()">Generar palabra</button>
+                <br>
+                <br>
+                <div [hidden]="esconderBotones">
+                    <button class="btn btn-success" mat-raised-button id="botonVerificar" (click)="jugar()">Verificar palabra</button>
+                    <button class="btn btn-danger" mat-raised-button id="botonRendirse" (click)="rendirse()">Rendirse</button>
+                </div>
+                <h2></h2>
+                <div class="row">
+                        <div class="col-lg-6 offset-lg-3">
+                            <h5 *ngIf="resultado == 'Vacío'">
+                                <h5 class="alert alert-dark">Ingresar palabra</h5>
+                            </h5>
+                            <h5 *ngIf="resultado == 'Ganó'">
+                                <h5 class="alert alert-success">Muy bien, ¡adivinaste la palabra desordenada en {{tiempoUtilizado}} segundos!</h5>
+                            </h5>
+                            <h5 *ngIf="resultado == 'Error'">
+                                <h5 class="alert alert-warning">¡No la adivinaste, seguí intentando!</h5>
+                            </h5>
+                            <h5 *ngIf="resultado == 'Perdió'">
+                                <h5 class="alert alert-danger">¡Te rendiste a los {{tiempoUtilizado}} segundos, la palabra era {{nuevoJuego.palabraOrdenada}}!</h5>
+                            </h5>
+                        </div>
+                </div>
+            </div>
+        </div>
+        

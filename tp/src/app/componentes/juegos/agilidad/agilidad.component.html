@@ -1,0 +1,55 @@
+<app-cabecera> </app-cabecera>
+<mat-toolbar color="accent">
+        <mat-toolbar-row>
+            <span>Jugador : {{nombreJugador}}</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+<div class="container animated fadeInLeft" style="text-align: center;background-color: black;margin-top: 5%">
+   
+        <br>
+    <form name="juego">
+        <h4>Cantidad de aciertos: {{nuevoJuego.cantAciertos}} / {{nuevoJuego.cantCuentas}}</h4>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h5>Primer número:</h5> <input [(ngModel)]="nuevoJuego.numeroUno" placeholder="Número uno" name="numero1" type="text" class="form-control" readonly/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h5>Operador:</h5> <input [(ngModel)]="nuevoJuego.cuenta" placeholder="Operador" name="operador" type="text" class="form-control" readonly/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h5>Segundo número:</h5> <input [(ngModel)]="nuevoJuego.numeroDos" placeholder="Número dos" name="numero2" type="text" class="form-control" readonly/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h5>Respuesta:</h5> <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="Ingrese el resultado" id="resultadoDeCuenta" name="numeroIngresado" type="text" class="form-control"/>
+            </div>
+        </div>
+        <br>
+        <h5 [hidden]="ocultarVerificar">
+            <p><i class="fa fa-spinner fa-spin"></i> Esperando numero...</p>
+           
+        </h5>
+        <br>  
+                <h5 [hidden]="ocultarVerificar"><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h5>
+              
+                <h5 [hidden]="!ocultarVerificar"><button mat-raised-button color="warn" (click)="NuevoJuego()" class="btn">Comenzar juego</button></h5>   
+                <br>         
+    
+    
+    </form>
+    </div>
+
+
+    <p-dialog header="Fin del juego" [(visible)]="display" [width]="300">
+            <div class="alert alert-info" style="font-size: 150%; text-align: center">
+                   <strong>Terminó el juego</strong><br>Cantidad de aciertos: {{nuevoJuego.cantAciertos}} / {{nuevoJuego.cantCuentas}}
+                  </div>
+    </p-dialog>
+   
+  
+    

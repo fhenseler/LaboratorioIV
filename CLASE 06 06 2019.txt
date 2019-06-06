@@ -1,0 +1,3 @@
+ng2-file-upload
+
+INSTALAR -> SIRVE PARA SUBIR IMÁGENES (ARCHIVOS), las imágenes subidas se pueden guardar en firebase

@@ -1,0 +1,106 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .title
+{
+    color: #fa6bae;
+}
+
+.fa
+{
+    color: #fbff00;
+}
+
+#p{
+    color: #fff784;
+}
+/* .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #100000;
+}
+
+.jumbotron{
+    bottom: 0;
+    background-color: #007BFF;
+    top: 20px;
+} */
+
+/* .list-group-item{
+    background-color: #a6d2f7;
+    color: #6083a0;
+    width: 50%;
+} */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(126, 126, 126, 0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    max-width: 160px;
+    margin: 10px;
+    padding-bottom: 10px;
+    float: left;
+  background-color: #000000;
+    text-align: center;
+
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+    border-radius: 5px 5px 0 0;
+    width: 70px;
+    height: 220px;
+    border-color: lightslategray;
+}/* Add some padding inside the card container */
+.container {
+    /* padding: 2px 16px; */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.button{
+    margin-left: 1px;
+    display: inline-block;
+    width: 50%;
+    padding: 5px 15px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    background-color: rgb(201, 190, 45);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+
+    border: none;
+    outline: 0;
+ 
+    padding: 8px;
+    color: black;
+   /* background-color: #000;*/
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .button:hover {background-color: rgb(216, 202, 4)}
+  
+  .button:active {
+    background-color: rgba(85, 241, 137, 0.067);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  #li1{
+    color:black;
+  }
+
+  .label {
+    color: white;
+    padding: 8px;
+  }
+
+  .warning {background-color: #ff9800;} /* Orange */
