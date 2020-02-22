@@ -1,0 +1,49 @@
+    <div class="container" style="color: white">
+        <div class="ui-g"  style="text-align: center;background-color: black">
+          <div class="ui-g-12" style="background: black">
+          </div>         
+          <div  class="container">      
+              <a href="">
+                  <img src="../../../assets/images/logo1.png" style="margin-left: 10px;"/>
+                </a>     
+
+              
+            <div class="ui-g ui-fluid">
+              <div class="ui-g-12 ui-sm-12" style="font-size: 150%;background-color:black">
+                  <div [hidden]="logueado">
+                   
+                                <p-header>
+                                  Bienvenido/a : {{nombreUsuario}}.
+                                </p-header>
+                               Tu sesión ya está activa! Hacé click acá para continuar al menú.
+                                <p-dialog  autoAlign="true" width=100%  focusOnShow="false" header="Iniciar Sesión" [(visible)]="displayLogin">
+                                  <app-login></app-login>
+                              </p-dialog>                
+                              
+                                <p-footer>
+                                    <br>
+                                  <button mat-raised-button color="accent"  (click)="showLogin()"  label="Show">Ir al menú</button>
+                                </p-footer>
+                    
+                  </div>
+  
+                  
+                  <div [hidden]="!logueado">
+                
+                                  <app-login></app-login>
+                                     
+                    </div>       
+              
+         
+          </div> 
+          
+              <div class="ui-g-12  ui-sm-12"  style="font-size: 100%;background-color:black">
+                    No tenés cuenta?<br>
+                     <p-dialog  autoAlign="true" width=70%  focusOnShow="false" header="Registrarse" [(visible)]="displayRegistro">
+                         <app-registro></app-registro>
+                         </p-dialog>
+                      <p-footer>
+                            <button mat-raised-button color="primary"  (click)="showRegistro()"  label="Show">Registrarse</button>
+                      </p-footer>
+              </div>
+
